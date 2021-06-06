@@ -18,9 +18,6 @@ class AlienInvassion:
 
         self.ship = Ship(self)
 
-        # Set the background color.
-        self.bg_color = (7, 71, 166)  # Background blue
-
     def run_game(self):
         """Start the main loop for the game."""
         while True:
@@ -39,7 +36,9 @@ class AlienInvassion:
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
         self.screen.fill(self.settings.bg_color)
+        self.ship.match_image_background()
         self.ship.blitme()
+
 
 
 if __name__ == '__main__':
